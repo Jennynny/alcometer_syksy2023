@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, TouchableOpacity, Pressable, Switch } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Pressable, Switch, ScrollView } from 'react-native';
 import {lightStyle, darkStyle,numInputs, radioStyle,promilles} from './styles/Styles.js';
 import { useState } from 'react';
 import NumericInput from 'react-native-numeric-input';
@@ -47,6 +47,7 @@ export default function App() {
   }}
 
   return (
+    <ScrollView>
     <View style={myStyle.container}>
       <View style={myStyle.swi}>
         <Switch 
@@ -76,15 +77,17 @@ export default function App() {
           borderColor='#07b0f3'
         />
       </View>
+
       <Text style={myStyle.label}>Hours</Text>
       <View style={myStyle.numInputs}>
-        <NumericInput onChange={v => setTime(v)}
+        <NumericInput style={myStyle.numIn} onChange={v => setTime(v)}
         totalWidth={135}
         value={time}
         minValue={0}
         rounded
         />
       </View>
+
       <RadioButton.Group onValueChange={newValue => setGender(newValue)} value={gender}>
         <View style={myStyle.radioStyle}>
           <RadioButton value= 'm'
@@ -99,6 +102,7 @@ export default function App() {
         <Text style={myStyle.radioStyle}>Female</Text>
         </View>
       </RadioButton.Group>
+
       <View style={myStyle.promillesStyles}>
         <Text style={myStyle.prom}>
           {promilles} 
@@ -108,7 +112,9 @@ export default function App() {
       <TouchableOpacity onPress={()=>count()}>
           <Text style={myStyle.submit}>CALCULATE</Text>
         </TouchableOpacity>
+      
     </View>
     
+    </ScrollView>
   );
 };

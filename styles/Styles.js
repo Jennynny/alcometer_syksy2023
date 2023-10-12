@@ -25,6 +25,7 @@ label: {
     color: '#ffffff',
     fontSize: 20,
     paddingLeft: 15,
+    
 },
 textInput:{
     //paddingLeaft: 10,
@@ -43,6 +44,7 @@ submit:{
     backgroundColor: '#290ff0',
     padding: 15,
     margin: 10,
+    //marginTop: 20,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold'
@@ -54,11 +56,15 @@ numInputs:{
     //gap: 10
    
 },
+//numIn:{
+//    backgroundColor:'#000000'
+//},
 radioStyle:{
+    padding: 10,
     paddingLeft: 15,
-   // paddingTop: 5,
+   //paddingTop: 25,
     flexDirection: 'row', 
-     alignItems:'center',
+    alignItems:'center',
      color:'#ffffff',
      fontWeight:'bold',
      fontSize: 18,
@@ -107,7 +113,6 @@ const darkStyle = StyleSheet.create({
     },
     promillesStyles: {
         ...lightStyle.promillesStyles
-       
        
     }, 
     prom:{
