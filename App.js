@@ -86,8 +86,8 @@ export default function App() {
           containerStyle={{backgroundColor: '#8cf1f8'}} 
           color='#000000'
           textColor='#000000'
-          rightButtonBackgroundColor = '#ffffff'
-          leftButtonBackgroundColor= '#ffffff'
+          rightButtonBackgroundColor = '#ece8e8'
+          leftButtonBackgroundColor= '#ece8e8'
           iconStyle={{color:'#000000'}}
           borderColor='#060606'
         />
@@ -104,11 +104,10 @@ export default function App() {
           containerStyle={{backgroundColor: '#8cf1f8'}} 
           color='#000000'
           textColor='#000000'
-          rightButtonBackgroundColor = '#ffffff'
-          leftButtonBackgroundColor= '#ffffff'
+          rightButtonBackgroundColor = '#ece8e8'
+          leftButtonBackgroundColor= '#ece8e8'
           iconStyle={{color:'#000000'}}
           borderColor='#060606'
-          borderWidth='25'
         />
       </View>
 
@@ -117,13 +116,13 @@ export default function App() {
       <RadioButton.Group onValueChange={newValue => setGender(newValue)} value={gender}>
         <View style={myStyle.radioStyle}>
           <RadioButton value= 'm'
-          color='#ffffff'
+          color='#ece8e8'
         />
         <Text style={myStyle.radioStyle}>Male</Text>
     {/**</View>
         <View style ={myStyle.radioStyle}>*/}
           <RadioButton value='f'
-            color='#ffffff'
+            color='#ece8e8'
           />
         <Text style={myStyle.radioStyle}>Female</Text>
         </View>

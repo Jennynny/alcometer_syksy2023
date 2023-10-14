@@ -17,9 +17,9 @@ swi:{
 header: {
     color: '#000000',
     textAlign: 'center',
-    fontSize: 40,
+    fontSize: 42,
     fontWeight: 'bold',
-    padding: 30
+    padding: 25
 },
 label: {
     color: '#000000',
@@ -40,7 +40,7 @@ textInput:{
     borderColor: '#000000',
     color:'#ffffff',
     fontWeight:'bold',
-    fontSize: 18
+    fontSize: 20
     
 },
 submit:{
@@ -58,20 +58,11 @@ submit:{
 },
 numInputs:{
     paddingLeft: 25,
-    paddingTop:5,
-    //justifyContent: "center",
-    //alignItems: "center",
-    //gap: 10
-    //color: "red"
-    
-   
+    paddingTop:5,  
 },
-//numIn:{
-    //backgroundColor:'#000000',
-    //color: '#bc0d0d'
-//},
 radioStyle:{
     padding: 5,
+    paddingBottom:10,
     paddingLeft: 15,
    //paddingTop: 25,
     flexDirection: 'row', 
@@ -80,21 +71,15 @@ radioStyle:{
      fontWeight:'bold',
      fontSize: 18,
      //justifyContent: 'center'
-     
-     
 },
 promillesStyles: {
     alignItems:'center',
     padding: 10,
-   
-   
 }, 
 prom:{
-    //color:'#000000',
-    fontSize: 38,
+    fontSize: 40,
     fontWeight: 'bold',
-    //padding: 5,
-   
+    //padding: 5,   
 }
 
 
@@ -114,22 +99,23 @@ const darkStyle = StyleSheet.create({
     },
     label: {
         ...lightStyle.label,
-        color:'#ffffff',
+        color:'#ece8e8',
     },
     textInput: {
         ...lightStyle.textInput,
-        borderColor: '#ffffff',
+        color:'#ffffff',
+        borderColor:'#dfd9d9',
     },
     submit: {
     ...lightStyle.submit,
-    borderColor: '#ffffff'
+    borderColor: '#dfd9d9'
     },
     numInputs:{
         ...lightStyle.numInputs
     },
     radioStyle:{
         ...lightStyle.radioStyle,
-        color:'#ffffff',
+        color:'#ece8e8',
     },
     promillesStyles: {
         ...lightStyle.promillesStyles
@@ -137,43 +123,10 @@ const darkStyle = StyleSheet.create({
     }, 
     prom:{
         ...lightStyle.prom,
-       // color:'#ffffff'
+       
     }
 });
 
-// const numInputs = StyleSheet.create({
-//     paddingLeft: 25,
-//     //justifyContent: "center",
-//     alignItems: "start",
-//     //gap: 10
-//     //textColor:'#12c315',
-//     //rightButtonBackgroundColor: '#000000',
-//     //leftButtonBackgroundColor: '#0000FF',
-//     //iconStyle:{color:'#ab0f0f'},
-//     //borderColor:'#FFFF00'
-//     color:'#000000',
-//     textColor:'#8feb9a',
-//     containerStyle:{backgroundColor: '#9e0808'},
-//     rightButtonBackgroundColor : '#5b498b',
-//     leftButtonBackgroundColor: '#0000FF',
-//     iconStyle:{color:'#f4e21b'},
-//     borderColor:'#7bd2f5'
-// })
 
-// const radioStyle= StyleSheet.create({
-//     flexDirection: 'row', 
-//     alignItems:'center',
-//     color:'#ffffff'
-
-// });
-
-//const promilles = StyleSheet.create({
-  //  color:'#ffffff',
-    //fontWeight:'bold',
-    //fontSize: 38,
-//})
 
 export {lightStyle, darkStyle};
-//numInputs,
-//,radioStyle
-//,promilles
