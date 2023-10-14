@@ -4,7 +4,7 @@ import Constants from "expo-constants";
 //export default StyleSheet.create({
 const lightStyle = StyleSheet.create({
 container:{
-    marginTop: Constants.statusBarHeight+5,
+    marginTop: Constants.statusBarHeight+2,
     backgroundColor: '#dd93fb',
     flex: 1
 },
@@ -12,7 +12,8 @@ swi:{
     flexDirection: 'row',
    // alignItems: '',
     justifyContent:'flex-start',
-    padding: 15
+    paddingLeft: 18,
+    paddingTop:15,
 },
 header: {
     color: '#000000',
@@ -58,10 +59,11 @@ submit:{
 },
 numInputs:{
     paddingLeft: 25,
-    paddingTop:5,  
+    paddingTop:5,
+    paddingBottom:5  
 },
 radioStyle:{
-    padding: 5,
+    padding: 8,
     paddingBottom:10,
     paddingLeft: 15,
    //paddingTop: 25,
@@ -69,7 +71,7 @@ radioStyle:{
     alignItems:'center',
      color:'#000000',
      fontWeight:'bold',
-     fontSize: 18,
+     fontSize: 16,
      //justifyContent: 'center'
 },
 promillesStyles: {
