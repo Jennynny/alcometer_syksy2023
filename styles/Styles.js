@@ -5,7 +5,7 @@ import Constants from "expo-constants";
 const lightStyle = StyleSheet.create({
 container:{
     marginTop: Constants.statusBarHeight+5,
-    backgroundColor: '#c65fef',
+    backgroundColor: '#dd93fb',
     flex: 1
 },
 swi:{
@@ -19,26 +19,32 @@ header: {
     textAlign: 'center',
     fontSize: 40,
     fontWeight: 'bold',
-    padding: 35
+    padding: 30
 },
 label: {
-    color: '#ffffff',
+    color: '#000000',
     fontSize: 20,
     paddingLeft: 15,
+    //padding: 5,
+    paddingTop: 10,
+    fontWeight:'bold'
     
 },
 textInput:{
     //paddingLeaft: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 5,
     padding: 10,
     margin: 10,
     marginTop: 5,
-    borderColor: '#ffffff',
-    color:'#ffffff'
+    borderColor: '#000000',
+    color:'#ffffff',
+    fontWeight:'bold',
+    fontSize: 18
+    
 },
 submit:{
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 5,
     color: 'white',
     backgroundColor: '#290ff0',
@@ -47,38 +53,48 @@ submit:{
     //marginTop: 20,
     textAlign: 'center',
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    borderColor:'#000000'
 },
 numInputs:{
     paddingLeft: 25,
+    paddingTop:5,
     //justifyContent: "center",
-    //alignItems: "start",
+    //alignItems: "center",
     //gap: 10
+    //color: "red"
+    
    
 },
 //numIn:{
-//    backgroundColor:'#000000'
+    //backgroundColor:'#000000',
+    //color: '#bc0d0d'
 //},
 radioStyle:{
-    padding: 10,
+    padding: 5,
     paddingLeft: 15,
    //paddingTop: 25,
     flexDirection: 'row', 
     alignItems:'center',
-     color:'#ffffff',
+     color:'#000000',
      fontWeight:'bold',
      fontSize: 18,
+     //justifyContent: 'center'
+     
      
 },
 promillesStyles: {
     alignItems:'center',
+    padding: 10,
    
    
 }, 
 prom:{
-    color:'#000000',
+    //color:'#000000',
     fontSize: 38,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    //padding: 5,
+   
 }
 
 
@@ -97,19 +113,23 @@ const darkStyle = StyleSheet.create({
     color: '#ffffff'
     },
     label: {
-        ...lightStyle.label
+        ...lightStyle.label,
+        color:'#ffffff',
     },
     textInput: {
-        ...lightStyle.textInput
+        ...lightStyle.textInput,
+        borderColor: '#ffffff',
     },
     submit: {
-    ...lightStyle.submit
+    ...lightStyle.submit,
+    borderColor: '#ffffff'
     },
     numInputs:{
         ...lightStyle.numInputs
     },
     radioStyle:{
-        ...lightStyle.radioStyle
+        ...lightStyle.radioStyle,
+        color:'#ffffff',
     },
     promillesStyles: {
         ...lightStyle.promillesStyles
@@ -117,7 +137,7 @@ const darkStyle = StyleSheet.create({
     }, 
     prom:{
         ...lightStyle.prom,
-        color:'#ffffff'
+       // color:'#ffffff'
     }
 });
 

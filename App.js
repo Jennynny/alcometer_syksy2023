@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, TouchableOpacity, Pressable, Switch, ScrollView } from 'react-native';
-import {lightStyle, darkStyle,numInputs, radioStyle,promilles} from './styles/Styles.js';
+import { Text, View, TextInput, TouchableOpacity, Switch, ScrollView } from 'react-native';
+import { lightStyle, darkStyle } from './styles/Styles.js';
 import { useState } from 'react';
 import NumericInput from 'react-native-numeric-input';
 import { RadioButton } from 'react-native-paper';
@@ -15,21 +15,20 @@ export default function App() {
   const [bottles, setBotless] = useState('');
   const [time, setTime] = useState('');
   const [promilles, setPromilles] = useState('');
-
   const [weight, setWeight] = useState(0);
+  const [resultColor, setResultColor] = useState('green'); // Default color
 
   //console.log(weight)
 
   const count =() => {
-    
-   // e.preventDefault()
-    let result = 0
 
+    let result = 0
     let litres = bottles * 0.33
     let grams = litres * 8 * 4.5
     let burning = weight / 10
     let gramsLeft = grams - (burning * time)
-    if (!weight){
+
+    if (!weight || weight < 1 ){
       alert('Set weight!')
     }else{
       if (gender === 'm'){
@@ -43,11 +42,21 @@ export default function App() {
         result = 0
       }
 
+        if (result < 0.5) {
+          setResultColor('green');
+        } else if (result >= 0.5 && result <= 1.1) {
+          setResultColor('yellow');
+        } else if (result > 1.1) {
+          setResultColor('red');
+        }
+
       setPromilles(result.toFixed(2))
+      
   }}
 
   return (
-    <ScrollView>
+
+  <ScrollView>
     <View style={myStyle.container}>
       <View style={myStyle.swi}>
         <Switch 
@@ -55,12 +64,18 @@ export default function App() {
         onValueChange={ newValue => setDark(newValue)}
         />
       </View>
-      <Text style={myStyle.header}>Alcometer</Text>
+
+{/**main Header */}
+    <Text style={myStyle.header}>Alcometer</Text>
+
+{/**set Weight */}
       <Text style={myStyle.label}>Weight</Text>
       <TextInput keyboardType='number-pad' style={myStyle.textInput}
         onChangeText={(v) => setWeight(v)}
         value={weight}      
       />
+
+{/**Bottles */}
       <Text style={myStyle.label}>Bottles</Text>
       <View style={myStyle.numInputs}>
         <NumericInput onChange={v => setBotless(v)}
@@ -68,16 +83,17 @@ export default function App() {
           value = {bottles}
           minValue={0}
           rounded
-          containerStyle={{backgroundColor: '#ffffff'}} 
+          containerStyle={{backgroundColor: '#8cf1f8'}} 
           color='#000000'
           textColor='#000000'
-          rightButtonBackgroundColor = '#0ad7de'
-          leftButtonBackgroundColor= '#0ad7de'
+          rightButtonBackgroundColor = '#ffffff'
+          leftButtonBackgroundColor= '#ffffff'
           iconStyle={{color:'#000000'}}
-          borderColor='#07b0f3'
+          borderColor='#060606'
         />
       </View>
 
+{/**Hours */}
       <Text style={myStyle.label}>Hours</Text>
       <View style={myStyle.numInputs}>
         <NumericInput style={myStyle.numIn} onChange={v => setTime(v)}
@@ -85,17 +101,27 @@ export default function App() {
         value={time}
         minValue={0}
         rounded
+          containerStyle={{backgroundColor: '#8cf1f8'}} 
+          color='#000000'
+          textColor='#000000'
+          rightButtonBackgroundColor = '#ffffff'
+          leftButtonBackgroundColor= '#ffffff'
+          iconStyle={{color:'#000000'}}
+          borderColor='#060606'
+          borderWidth='25'
         />
       </View>
 
+{/**Gender */}
+      <Text style={myStyle.label}>Gender</Text>
       <RadioButton.Group onValueChange={newValue => setGender(newValue)} value={gender}>
         <View style={myStyle.radioStyle}>
           <RadioButton value= 'm'
           color='#ffffff'
         />
         <Text style={myStyle.radioStyle}>Male</Text>
-        </View>
-        <View style ={myStyle.radioStyle}>
+    {/**</View>
+        <View style ={myStyle.radioStyle}>*/}
           <RadioButton value='f'
             color='#ffffff'
           />
@@ -103,18 +129,19 @@ export default function App() {
         </View>
       </RadioButton.Group>
 
+{/**Result */}
       <View style={myStyle.promillesStyles}>
-        <Text style={myStyle.prom}>
+        <Text style={[myStyle.prom, { color: resultColor }]}>
           {promilles} 
         </Text>
-
       </View>
-      <TouchableOpacity onPress={()=>count()}>
-          <Text style={myStyle.submit}>CALCULATE</Text>
-        </TouchableOpacity>
+
+{/**Button (Calculate) */}
+      <TouchableOpacity onPress={count}>
+        <Text style={myStyle.submit}>CALCULATE</Text>
+      </TouchableOpacity>
       
     </View>
-    
-    </ScrollView>
+  </ScrollView>
   );
 };
